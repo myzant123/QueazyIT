@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23E90D04-7F5F-4C77-9852-DB314CCE6D3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueazyIT.Application", "QueazyIT.Application\QueazyIT.Application.csproj", "{BC3E85F2-8FBD-42A6-92A8-341CD537B4FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueazyIT.Core", "QueazyIT.Core\QueazyIT.Core.csproj", "{85F4ADD6-86C4-4C72-B1A6-419EFD604291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueazyIT.Infrastructure", "QueazyIT.Infrastructure\QueazyIT.Infrastructure.csproj", "{CDCFB3C6-A6BC-49A1-A8D5-42417CB29B42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC3E85F2-8FBD-42A6-92A8-341CD537B4FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3E85F2-8FBD-42A6-92A8-341CD537B4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3E85F2-8FBD-42A6-92A8-341CD537B4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3E85F2-8FBD-42A6-92A8-341CD537B4FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F4ADD6-86C4-4C72-B1A6-419EFD604291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85F4ADD6-86C4-4C72-B1A6-419EFD604291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85F4ADD6-86C4-4C72-B1A6-419EFD604291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85F4ADD6-86C4-4C72-B1A6-419EFD604291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCFB3C6-A6BC-49A1-A8D5-42417CB29B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCFB3C6-A6BC-49A1-A8D5-42417CB29B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCFB3C6-A6BC-49A1-A8D5-42417CB29B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCFB3C6-A6BC-49A1-A8D5-42417CB29B42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BC3E85F2-8FBD-42A6-92A8-341CD537B4FA} = {23E90D04-7F5F-4C77-9852-DB314CCE6D3C}
+		{85F4ADD6-86C4-4C72-B1A6-419EFD604291} = {23E90D04-7F5F-4C77-9852-DB314CCE6D3C}
+		{CDCFB3C6-A6BC-49A1-A8D5-42417CB29B42} = {23E90D04-7F5F-4C77-9852-DB314CCE6D3C}
+	EndGlobalSection
+EndGlobal
