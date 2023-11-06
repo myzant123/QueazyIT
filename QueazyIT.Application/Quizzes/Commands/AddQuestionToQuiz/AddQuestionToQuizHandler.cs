@@ -4,7 +4,7 @@ using QueazyIT.Core.Quizzes.Repositories;
 
 namespace QueazyIT.Application.Quizzes.Commands.AddQuestionToQuiz;
 
-internal sealed class AddQuestionToQuizHandler : ICommandHandler<AddQuestionToQuizCommand>
+internal sealed class AddQuestionToQuizHandler : ICommandHandler<AddQuestionToQuizCommand, AddQuestionToQuizResponse>
 {
     private readonly IQuizRepository _quizRepository;
 
@@ -13,14 +13,15 @@ internal sealed class AddQuestionToQuizHandler : ICommandHandler<AddQuestionToQu
         _quizRepository = quizRepository;
     }
     
-    public async Task HandleAsync(AddQuestionToQuizCommand command, CancellationToken cancellationToken = default)
+    public async Task<AddQuestionToQuizResponse> HandleAsync(AddQuestionToQuizCommand command, CancellationToken cancellationToken = default)
     {
         var quiz = await _quizRepository.GetQuizAsync(command.QuizId, cancellationToken);
 
         if (quiz is null)
             throw new NotFoundException(command.QuizId, "Quiz");
         
-        quiz.AddQuestion(command.Content);
+        var question = quiz.AddQuestion(command.Content);
         await _quizRepository.UpdateAsync(quiz, cancellationToken);
+        return new AddQuestionToQuizResponse(question.Id);
     }
 }

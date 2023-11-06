@@ -58,7 +58,7 @@ internal sealed class Quiz
         IsPreviousQuestion = isPreviousQuestion;
     }
 
-    private Question GetQuestionById(QuestionId questionId)
+    public Question GetQuestionById(QuestionId questionId)
     {
         var question = _questions.FirstOrDefault(q => q.Id == questionId);
         if (question is null)
@@ -67,7 +67,7 @@ internal sealed class Quiz
         return question;
     }
     
-    public void AddQuestion(string content)
+    public Question AddQuestion(string content)
     {
         if (_questions.Count >= MaxQuestionsNum)
             throw new QuestionsCountExceededException();
@@ -77,6 +77,7 @@ internal sealed class Quiz
         var orderNo = GetNextQuestionOrderNo();
         question.SetQuestionOrderNo(orderNo);
         _questions.Add(question);
+        return question;
     }
     
     private int GetNextQuestionOrderNo()
@@ -92,5 +93,10 @@ internal sealed class Quiz
         
         var questionsToMove = _questions.Where(x => x.OrderNo > question.OrderNo).ToList();
         foreach (var questionToMove in questionsToMove) questionToMove.DecrementOrderNo();
+    }
+
+    public static int GetMaxQuestionsNum()
+    {
+        return MaxQuestionsNum;
     }
 }
