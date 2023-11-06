@@ -4,8 +4,7 @@ public abstract class TypeId : IEquatable<TypeId>
 {
     protected internal Guid Value { get; }
 
-    protected TypeId(Guid value)
-        => Value = value;
+    protected TypeId(Guid value) => Value = value;
 
     public bool IsEmpty() => Value == Guid.Empty;
 
@@ -19,7 +18,7 @@ public abstract class TypeId : IEquatable<TypeId>
     {
         if (ReferenceEquals(null, obj)) return false;
         if (ReferenceEquals(this, obj)) return true;
-        return obj.GetType() == this.GetType() && Equals((TypeId)obj);
+        return obj.GetType() == GetType() && Equals((TypeId)obj);
     }
 
     public override int GetHashCode()
@@ -27,8 +26,7 @@ public abstract class TypeId : IEquatable<TypeId>
         return Value.GetHashCode();
     }
 
-    public static implicit operator Guid(TypeId typeId)
-        => typeId.Value;
+    public static implicit operator Guid(TypeId typeId) => typeId.Value;
 
     public static bool operator ==(TypeId? a, TypeId? b)
     {

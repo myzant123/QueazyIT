@@ -126,7 +126,6 @@ public class QuizTest
         var question3 = _quiz.AddQuestion("QuestionContent3");
         var question4 = _quiz.AddQuestion("QuestionContent4");
 
-        
         // Act
         _quiz.RemoveQuestion(question2.Id);
         

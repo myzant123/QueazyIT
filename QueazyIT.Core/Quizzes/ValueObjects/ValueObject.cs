@@ -56,8 +56,6 @@ public abstract class ValueObject : IEquatable<ValueObject>
             .GetProperties(BindingFlags.Instance | BindingFlags.Public)
             .Where(p => p.GetCustomAttribute(typeof(IgnoreMemberAttribute)) == null)
             .ToList();
-        // Not available in Core
-        // !Attribute.IsDefined(p, typeof(IgnoreMemberAttribute))).ToList();
     }
 
     private IEnumerable<FieldInfo> GetFields()
